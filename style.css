@@ -17,7 +17,8 @@ a {
 
 p,
 ul,
-li {
+li,
+span {
   margin: 0;
   padding: 0;
 }
@@ -175,12 +176,19 @@ input.remain__money-number {
   margin: 12px;
 }
 
-.deposit__money {
+input.deposit__money {
   width: 200px;
   height: 33px;
   background-color: #ffffff;
   border: 1px solid #bdbdbd;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
   border-radius: 5px;
+  padding: 6px;
+}
+input.deposit__money::placeholder {
+  color: #bdbdbd;
 }
 
 .deposit__btn {
@@ -196,36 +204,68 @@ input.remain__money-number {
 }
 
 /* 선택/획득 */
+.select {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.select__gain {
+  width: 94px;
+  height: 106px;
+  background-color: #6327fe;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 19px;
+  color: #ffffff;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+  border-radius: 5px;
+}
+
 .select__box {
-  overflow: auto;
-  /* overflow: scroll; */
+  overflow-x: hidden;
+  overflow-y: auto;
   width: 200px;
   height: 106px;
   border: 1px solid #bdbdbd;
   background-color: #eae8fe;
   border-radius: 5px;
 }
+.select__box::-webkit-scrollbar {
+  width: 4px;
+}
+.select__box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.select__box::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  height: 79px;
+  border-radius: 50px;
+}
 
 .select__box img {
   width: 18px;
   height: 33px;
+  margin: 6px 0 7px 10px;
 }
 
 .select__box-item {
   display: flex;
-  gap: 21px;
+  align-items: center;
+  gap: 10px;
   width: 170px;
   height: 46px;
   background-color: #ffffff;
   border-radius: 5px;
+  margin: 12px 18px 6px 12px;
 }
 .select__box-item p {
   width: 73px;
-  height: 10px;
+  /* height: 10px; */
   color: #333333;
   font-size: 9px;
   font-weight: 500;
-  line-height: 30px;
+  margin-right: 11px;
 }
 .select__box-item span {
   background-color: #ffffff;
@@ -238,6 +278,7 @@ input.remain__money-number {
   border: 1px solid #bdbdbd;
   border-radius: 5px;
   text-align: center;
+  margin-right: 8px;
 }
 
 /* 소유 */
@@ -306,34 +347,49 @@ input.have__money-title:focus {
 }
 
 .have__drinks-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 306px;
   height: 364px;
   background-color: #eae8fe;
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
   gap: 6px;
-  overflow: auto;
   margin: 0 auto;
   border: 1px solid #bdbdbd;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.have__drinks-box::-webkit-scrollbar {
+  width: 4px;
+}
+.have__drinks-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+.have__drinks-box::-webkit-scrollbar-thumb {
+  background-color: #ffffff;
+  height: 79px;
+  border-radius: 50px;
 }
 
 .have__drinks-box-item {
   display: flex;
+  align-items: center;
+  gap: 10px;
   width: 276px;
   height: 46px;
   background-color: #ffffff;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 0 18px 0 12px;
 }
-
 .have__drinks-box-item:nth-child(1) {
-  margin: 12px 12px 0 0;
+  margin-top: 12px;
 }
 
 .have__drinks-box-item img {
   width: 18px;
   height: 33px;
+  margin: 6px 0 7px 10px;
 }
 
 .have__drinks-box-item p {
@@ -341,4 +397,42 @@ input.have__money-title:focus {
   font-size: 9px;
   font-weight: 500;
   line-height: 13px;
+  margin-right: 117px;
+}
+
+.have__drinks-box-item span {
+  width: 30px;
+  height: 30px;
+  line-height: 28px;
+  /* height 30px인데 왜 line-height 30px 하면 반이 아닐까? */
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  margin-right: 8px;
+  text-align: center;
+}
+
+/* 총 금액 */
+.have__drinks-money p {
+  text-align: right;
+  width: 80px;
+  height: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  color: #000000;
+}
+
+.have__drinks-money {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 17px;
+  margin: 6px 27px 27px 140px;
+}
+
+input.have__drinks-number {
+  text-align: right;
+  width: 60px;
+  padding: 0;
 }
