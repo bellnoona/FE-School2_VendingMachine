@@ -1,0 +1,344 @@
+/* Settings */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  background: #eae8fe;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+/* layout */
+
+/* 밴딩머신 바디 */
+.vending-machine__body {
+  /* 가운데정렬 헷갈린다. 
+  margint: 0 auto / display: inline-block 왜 안되느냐. */
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  /* width: 360px; 생기니까 flex 무너진다. why?? */
+  /* height: 545px; */
+  margin-top: 67px;
+}
+
+/* 밴딩머신 로고 */
+img.vending-machine__logo {
+  display: block;
+  margin: 0 auto;
+}
+
+/* 구매 */
+.vending-machine__purchase {
+  width: 360px;
+  height: 545px;
+  background-color: #ffffff;
+}
+
+/* 음료 목록 */
+.drink-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+  margin: 31px 27px;
+}
+
+.drink-list__item {
+  position: relative;
+  width: 94px;
+  height: 130px;
+  background-color: #ffffff;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+  border-radius: 10px;
+}
+button.drink-list__item img {
+  position: absolute;
+  top: 11px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+button.drink-list__item p {
+  position: absolute;
+  top: 82px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+button.drink-list__item span {
+  position: absolute;
+  top: 99px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.drink-list__item p {
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
+  color: #333333;
+  text-align: center;
+}
+.drink-list__item span {
+  width: 70px;
+  height: 22px;
+  background: #6327fe;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 100%;
+  color: #ffffff;
+  padding: 5px 16px;
+}
+
+/* 잔액 */
+.remain {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.remain__money-detail {
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  height: 33px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+  padding: 6px 10px;
+}
+
+input.remain__money-title {
+  width: 47px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #000000;
+  background-color: #eae8fe;
+}
+input.remain__money-number {
+  width: 54px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  text-align: right;
+  background-color: #eae8fe;
+}
+
+.remain-return {
+  width: 94px;
+  height: 33px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #000000;
+  background: #ffffff;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+  border-radius: 5px;
+}
+
+/* 입금 */
+.deposit {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px;
+}
+
+.deposit__money {
+  width: 200px;
+  height: 33px;
+  background-color: #ffffff;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+}
+
+.deposit__btn {
+  width: 94px;
+  height: 33px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+  color: #000000;
+  background: #ffffff;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+  border-radius: 5px;
+}
+
+/* 선택/획득 */
+.select__box {
+  overflow: auto;
+  /* overflow: scroll; */
+  width: 200px;
+  height: 106px;
+  border: 1px solid #bdbdbd;
+  background-color: #eae8fe;
+  border-radius: 5px;
+}
+
+.select__box img {
+  width: 18px;
+  height: 33px;
+}
+
+.select__box-item {
+  display: flex;
+  gap: 21px;
+  width: 170px;
+  height: 46px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+.select__box-item p {
+  width: 73px;
+  height: 10px;
+  color: #333333;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 30px;
+}
+.select__box-item span {
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 30px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  text-align: center;
+}
+
+/* 소유 */
+
+.vending-machine__have {
+  width: 360px;
+  height: 545px;
+  background-color: #ffffff;
+}
+
+/* 간격 */
+.have__between {
+  width: 360px;
+  height: 20px;
+  background-color: #eae8fe;
+}
+
+/* 소지금 */
+.have__money {
+  width: 360px;
+  height: 50px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.have__money-detail {
+  display: flex;
+  justify-content: space-between;
+  width: 306px;
+  height: 32px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.have__money-title {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  background-color: #eae8fe;
+}
+input.have__money-title:focus {
+  border: none;
+  outline: none;
+}
+.have__money-number {
+  width: 87px;
+  height: 20px;
+  background-color: #eae8fe;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: right;
+}
+
+/* 획득한 음료 */
+.have__drinks h1 {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  text-align: center;
+}
+
+.have__drinks-box {
+  width: 306px;
+  height: 364px;
+  background-color: #eae8fe;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: auto;
+  margin: 0 auto;
+  border: 1px solid #bdbdbd;
+}
+
+.have__drinks-box-item {
+  display: flex;
+  width: 276px;
+  height: 46px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin: 0 auto;
+}
+
+.have__drinks-box-item:nth-child(1) {
+  margin: 12px 12px 0 0;
+}
+
+.have__drinks-box-item img {
+  width: 18px;
+  height: 33px;
+}
+
+.have__drinks-box-item p {
+  width: 73px;
+  font-size: 9px;
+  font-weight: 500;
+  line-height: 13px;
+}
