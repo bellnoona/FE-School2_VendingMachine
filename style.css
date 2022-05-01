@@ -126,13 +126,38 @@ button.drink-list__item span {
   padding: 5px 16px;
 }
 
-.drink-list__item.sold-out {
+/* .drink-list__item.sold-out {
   background: url(./imgs/sold_out.png) center no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+} */
+
+/* 품절 */
+.vending-machine__purchase .drink-list button.sold-out::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 10px;
+  background: no-repeat center/ 60px 46px url(./imgs/sold_out.png)
+    rgba(0, 0, 0, 0.8);
+}
+
+.vending-machine__purchase .drink-list button.sold-out::after {
+  content: '품절';
+  overflow: hidden;
+  position: absolute;
+  text-indent: -9999px;
+  line-height: 0;
+  font-size: 1px;
+  color: transparent;
 }
 
 /* 잔액 */
@@ -360,19 +385,20 @@ input.have__money-title:focus {
 }
 
 .have__drinks-box {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; */
   width: 306px;
   height: 364px;
   background-color: #eae8fe;
   border-radius: 5px;
-  gap: 6px;
+  /* gap: 6px; */
   margin: 0 auto;
   border: 1px solid #bdbdbd;
   overflow-x: hidden;
   overflow-y: auto;
 }
+
 .have__drinks-box::-webkit-scrollbar {
   width: 4px;
 }
@@ -393,7 +419,7 @@ input.have__money-title:focus {
   height: 46px;
   background-color: #ffffff;
   border-radius: 5px;
-  margin: 0 18px 0 12px;
+  margin: 0 18px 6px 12px;
 }
 .have__drinks-box-item:nth-child(1) {
   margin-top: 12px;
